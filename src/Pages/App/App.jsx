@@ -1,10 +1,31 @@
+import {useState} from 'react';
 import { Routes, Route } from 'react-router-dom';
 import './App.css';
+import AuthPage from '../AuthPage/AuthPage';
+import NewCarPage from '../NewCarPage/NewCarPage';
+import CarHistoryPage from '../CarHistoryPage/CarHistoryPage';
+import NavBar from '../../components/NavBar/NavBar';
 
 function App() {
+  const [user, setUser] = useState({});
   return (
     <div className="App">
-      <h1>Test</h1>
+      { user ?
+        <>
+          <NavBar/>
+          <Routes>
+            {/*Route components in here*/}
+            <Route path="/cars/new" element={<NewCarPage />} />
+            <Route path="/cars" element={<CarHistoryPage />} />
+
+          </Routes>
+        </>
+          
+          :
+          <AuthPage />
+
+      }
+      
     </div>
   );
 }

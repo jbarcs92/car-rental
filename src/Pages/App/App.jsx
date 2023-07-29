@@ -7,12 +7,14 @@ import CarHistoryPage from '../CarHistoryPage/CarHistoryPage';
 import NavBar from '../../components/NavBar/NavBar';
 
 function App() {
-  const [user, setUser] = useState({});
+  const [user, setUser] = useState(null);
+
+
   return (
-    <div className="App">
+    <main className="App">
       { user ?
         <>
-          <NavBar/>
+          <NavBar />
           <Routes>
             {/*Route components in here*/}
             <Route path="/cars/new" element={<NewCarPage />} />
@@ -21,12 +23,12 @@ function App() {
           </Routes>
         </>
           
-          :
-          <AuthPage />
+        :
+        <AuthPage />
 
       }
       
-    </div>
+    </main>
   );
 }
 

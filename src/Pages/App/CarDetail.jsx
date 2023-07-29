@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Car } from '../models/Car';
+import { ControlledCarousel } from '../../components/ControlledCarousel'; 
+
 
 export default function CarDetails({ carId }) {
 
@@ -18,11 +20,8 @@ export default function CarDetails({ carId }) {
     <div className="car-details">
       <h2>{car.model} {car.make}</h2>
 
-      <div className="gallery">
-        {car.images.map(photo => (
-            <img src={photo.url} alt={photo.description} key={photo._id} />
-        ))}
-      </div>
+        <ControlledCarousel images={car.images} />
+        
 
       <div className="info">
         <p>{car.description}</p> 

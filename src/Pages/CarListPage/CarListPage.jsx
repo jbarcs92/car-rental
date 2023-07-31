@@ -36,7 +36,7 @@ export default function CarListPage() {
           </ListGroup>
         ))}
         <ul className="car-grid" style={{listStyle:'none'}}>
-          {cars?.length === 0 && <p>No cars found</p>}
+          
             {cars.map((car, idx) => (
                 <li key={idx}>
                     <CarCard car={car} />

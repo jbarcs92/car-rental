@@ -35,12 +35,3 @@ export default function CarListPage() {
     </>
   );
 }
-
-//     async function fetchCars() {
-//       const filter = { category };
-//       const cars = await Car.find(filter);
-//       setCars(cars);
-//     }
-
-//     fetchCars();
-//   }, [category]);

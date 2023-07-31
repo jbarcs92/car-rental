@@ -23,6 +23,6 @@ JV
 
 ## Next Steps
 
-Ability to upload and display images, sort vehicles by category, add service feature.
+Ability to sort vehicles by category, add service feature.
 
 ## Screenshots

@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import CarCard from '../../components/CarCard/CarCard';
 import CarForm from '../../components/CarForm/CarForm';
+import ListGroup from 'react-bootstrap/ListGroup';
 
 
 export default function CarListPage() {
@@ -20,10 +21,20 @@ export default function CarListPage() {
     setCars((prevCars) => [...prevCars, newCar]);
   };
 
+ 
 
   return (
     <>
         <CarForm onCarCreated={handleCarCreated} />
+        {['sm', 'md', 'lg', 'xl'].map((breakpoint, idx) => (
+          <ListGroup horizontal={breakpoint} className="my-2" key={idx}>
+            <ListGroup.Item>Year</ListGroup.Item>
+            <ListGroup.Item>Make</ListGroup.Item>
+            <ListGroup.Item>Model</ListGroup.Item>
+            <ListGroup.Item>Rate</ListGroup.Item>
+            <ListGroup.Item>Available</ListGroup.Item>
+          </ListGroup>
+        ))}
         <ul className="car-grid" style={{listStyle:'none'}}>
           {cars?.length === 0 && <p>No cars found</p>}
             {cars.map((car, idx) => (

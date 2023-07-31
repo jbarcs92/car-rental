@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import "./CarForm.css"
 
 const CarForm = ({ onCarCreated }) => {
     const [formData, setFormData] = useState({
@@ -8,6 +9,7 @@ const CarForm = ({ onCarCreated }) => {
       year: '',
       rate: '',
       available: false,
+      image: '',
     });
   
     const handleChange = (e) => {
@@ -40,13 +42,14 @@ const CarForm = ({ onCarCreated }) => {
             year: '',
             rate: '',
             available: false,
+            image: '',
           });
         })
         .catch((error) => console.error('Error creating car:', error));
     };
   
     return (
-        <form onSubmit={handleSubmit}>
+        <form className="car-form"onSubmit={handleSubmit}>
           <label>
             Class:
             <input
@@ -99,6 +102,15 @@ const CarForm = ({ onCarCreated }) => {
               name="available"
               checked={formData.available}
               onChange={handleChange} 
+            />
+          </label>
+          <label>
+            Image URL:
+            <input
+              type="text"
+              name="image"
+              value={formData.image}
+              onChange={handleChange}
             />
           </label>
           <button type="submit">Create Car</button>

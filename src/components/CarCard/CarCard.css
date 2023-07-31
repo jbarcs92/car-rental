@@ -1,0 +1,33 @@
+.car-card {
+    width: 90%;
+    height: 275px;
+    background-color: #fff;
+    border-radius: 15px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.15);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-decoration: none;
+    color: #333;
+  }
+  
+  .car-card-poster {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0.9;
+    position: relative;
+  }
+  
+  .car-title {
+    margin: 10px;
+    font-size: 20px;
+  }
+
+  .car-rate {
+    margin: 10px;
+    font-size: 16px;
+    color: #666;
+  }

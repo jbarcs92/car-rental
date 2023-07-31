@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import CarCard from '../../components/CarCard/CarCard';
 import CarForm from '../../components/CarForm/CarForm';
+import "./CarListPage.css"
 
 
 export default function CarListPage() {

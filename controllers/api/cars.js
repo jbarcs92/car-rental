@@ -10,14 +10,15 @@ module.exports = {
 async function create(req,res) {
     //add car to db
     try {
-        const { carClass, description, model, year, rate, available } = req.body;
+        const { carClass, description, model, year, rate, available, image } = req.body;
         const newCar = await Car.create({
             carClass,
             description,
             model,
             year,
             rate,
-            available
+            available,
+            image
         });
         res.json(newCar);
     } catch (error) {

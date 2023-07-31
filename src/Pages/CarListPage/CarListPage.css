@@ -1,0 +1,9 @@
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    list-style-type: none;
+    padding: 0;
+    margin: 0 auto;
+    max-width: 80%;
+}

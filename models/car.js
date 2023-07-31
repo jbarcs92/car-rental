@@ -3,17 +3,17 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const carSchema = new Schema({
-    make: {type: String, required: true},
+    carClass: {type: String, required: true},
+    description: {type: String, required: true},
     model: {type: String, required: true},
     year: {type: Number, required: true},
     rate: {type: Number, required: true},
-    rented: {type: Boolean, default: false}
-
-
+    available: {type: Boolean, default: false},
+    images: [{type: String}]
 }, {
     timestamps: true
 })
 
-const Cars = mongoose.model('Cars', carSchema);
+const Car = mongoose.model('Car', carSchema);
 
-module.exports = Cars;
+module.exports = Car;

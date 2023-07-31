@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { Form, Button } from 'react-bootstrap';
 
 const CarForm = ({ onCarCreated }) => {
     const [formData, setFormData] = useState({
@@ -46,64 +47,85 @@ const CarForm = ({ onCarCreated }) => {
     };
   
     return (
-        <form onSubmit={handleSubmit}>
-          <label>
+        <Form onSubmit={handleSubmit}>
+          <Form.Group>
+          <Form.Label>
             Class:
-            <input
+            </Form.Label>
+            <Form.Control
               type="text"
               name="carClass"
               value={formData.carClass}
               onChange={handleChange}
             />
-          </label>
-          <label>
+          </Form.Group>
+
+          <Form.Group>
+          <Form.Label>
             Description:
-            <input
+            </Form.Label>
+            <Form.Control
               type="text"
               name="description"
               value={formData.description}
               onChange={handleChange}
             />
-          </label>
-          <label>
+          </Form.Group>
+
+          <Form.Group>
+          <Form.Label>
             Model:
-            <input
+            </Form.Label>
+            <Form.Control
               type="text"
               name="model"
               value={formData.model}
               onChange={handleChange}
             />
-          </label>
-          <label>
+          </Form.Group>
+
+          <Form.Group>
+          <Form.Label>
             Year:
-            <input
-              type="number"
+            </Form.Label>
+            <Form.Control
+              type="text"
               name="year"
               value={formData.year}
               onChange={handleChange}
             />
-          </label>
-          <label>
+          </Form.Group>
+
+          <Form.Group>
+          <Form.Label>
             Rate:
-            <input
-              type="number"
+            </Form.Label>
+            <Form.Control
+              type="text"
               name="rate"
               value={formData.rate}
               onChange={handleChange}
             />
-          </label>
-          <label>
-            Available:
-            <input
-              type="checkbox"
+          </Form.Group>
+
+            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Check
               name="available"
-              checked={formData.available}
+              // checked={available}
               onChange={handleChange} 
+              type="checkbox"
+              label="Available"
             />
-          </label>
-          <button type="submit">Create Car</button>
-        </form>
-      );
-    };
+          </Form.Group>
+
+      
+         <Button variant="primary" type="submit">
+              Create Car
+         </Button>
+      </Form>
+
+    );
+  }
+
     
     export default CarForm;

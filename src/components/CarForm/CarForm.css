@@ -1,0 +1,22 @@
+form {
+    /* form styles */ 
+    background-color:#f9f8f8; 
+  }
+  
+  .form-label {
+    /* label styles */
+    font-family: 'Sen', sans-serif;
+  }
+  
+  .form-control {
+    /* input styles */
+  } 
+  
+  #formHorizontalModel {
+    /* model input styles */
+  }
+  
+  form button[type="submit"] {
+    /* submit button styles */
+    border-color: azure;
+  }

@@ -25,6 +25,7 @@ export default function CarListPage() {
     <>
         <CarForm onCarCreated={handleCarCreated} />
         <ul className="car-grid" style={{listStyle:'none'}}>
+          {cars?.length === 0 && <p>No cars found</p>}
             {cars.map((car, idx) => (
                 <li key={idx}>
                     <CarCard car={car} />
@@ -35,11 +36,3 @@ export default function CarListPage() {
   );
 }
 
-//     async function fetchCars() {
-//       const filter = { category };
-//       const cars = await Car.find(filter);
-//       setCars(cars);
-//     }
-
-//     fetchCars();
-//   }, [category]);

@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const favicon = require('serve-favicon');
 const logger = require('morgan');
+const mongoose = require('mongoose');
+const carRoutes = require('./routes/api/cars');
 // Always require and configure near the top
 require('dotenv').config();
 // Connect to the database
@@ -11,7 +13,8 @@ const app = express();
 
 app.use(logger('dev'));
 app.use(express.json());
-
+app.use(express.static(path.join(__dirname, 'public')));
+app.use('/public/images/', express.static('./public/images'));
 // Configure both serve-favicon & static middleware
 // to serve from the production 'build' folder
 app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
@@ -25,7 +28,7 @@ const port = process.env.PORT || 3001;
 
 // Put API routes here, before the "catch all" route
 // app.use('/api/users', require('./routes/api/users'));
-app.use('/api/cars', require('./routes/api/cars'))
+app.use('/api/cars', carRoutes);
 
 // The following "catch all" route (note the *) is necessary
 // to return the index.html on all non-AJAX/API requests

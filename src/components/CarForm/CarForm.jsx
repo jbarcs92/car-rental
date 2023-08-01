@@ -50,8 +50,9 @@ const CarForm = ({ onCarCreated }) => {
   return (
     <Row>
       <style>
-  @import url('https://fonts.googleapis.com/css2?family=Sen:wght@500&display=swap');
-</style>
+        @import
+        url('https://fonts.googleapis.com/css2?family=Sen:wght@500&display=swap');
+      </style>
       <Form onSubmit={handleSubmit}>
         <Form.Group as={Row} className="mb-3" controlId="formHorizontalClass">
           <Form.Label column sm={2}>
@@ -155,11 +156,11 @@ const CarForm = ({ onCarCreated }) => {
           className="mb-3"
           controlId="formHorizontalDescription"
         >
-          <Form.Label column sm={2}>
+          <Form.Label column sm={4}>
             Description:
           </Form.Label>
           <Col sm={10}>
-            <Form.Control
+            <Form.Control as="textarea" rows={3}
               type="text"
               name="description"
               value={formData.description}
@@ -168,14 +169,16 @@ const CarForm = ({ onCarCreated }) => {
           </Col>
         </Form.Group>
 
-        <Button variant="primary" 
-          style={{ 
-            backgroundColor: 'gray',
+        <Button
+          variant="primary"
+          style={{
+            backgroundColor: "gray",
             borderRadius: 30,
-            padding: '18px 36px' 
+            padding: "18px 36px",
           }}
-        type="submit">
-          Create Car
+          type="submit"
+        >
+          Create Car Listing
         </Button>
       </Form>
     </Row>

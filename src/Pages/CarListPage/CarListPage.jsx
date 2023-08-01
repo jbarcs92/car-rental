@@ -1,7 +1,10 @@
 import { useState, useEffect } from 'react';
 import CarCard from '../../components/CarCard/CarCard';
 import CarForm from '../../components/CarForm/CarForm';
-import ListGroup from 'react-bootstrap/ListGroup';
+import { Navbar } from 'react-bootstrap';
+import { Row, Col, Container, Nav } from 'react-bootstrap';
+import './CarListPage.css';
+
 
 
 export default function CarListPage() {
@@ -21,29 +24,32 @@ export default function CarListPage() {
     setCars((prevCars) => [...prevCars, newCar]);
   };
 
- 
 
   return (
-    <>
+    
+    <Container>
+    <Row>
+      <Col md={4}>
         <CarForm onCarCreated={handleCarCreated} />
-        {['sm', 'md', 'lg', 'xl'].map((breakpoint, idx) => (
-          <ListGroup horizontal={breakpoint} className="my-2" key={idx}>
-            <ListGroup.Item>Year</ListGroup.Item>
-            <ListGroup.Item>Make</ListGroup.Item>
-            <ListGroup.Item>Model</ListGroup.Item>
-            <ListGroup.Item>Rate</ListGroup.Item>
-            <ListGroup.Item>Available</ListGroup.Item>
-          </ListGroup>
-        ))}
+        </Col>
+        <Col md={8}>
+          <Row>
         <ul className="car-grid" style={{listStyle:'none'}}>
-          
             {cars.map((car, idx) => (
-                <li key={idx}>
+              <Col md={6} key={car._id}>
+                 <li key={idx}>
                     <CarCard car={car} />
                 </li>
+              </Col>
             ))}
         </ul>
-    </>
+          </Row>
+        </Col>
+      </Row>  
+    </Container>
+    
   );
 }
+
+
 

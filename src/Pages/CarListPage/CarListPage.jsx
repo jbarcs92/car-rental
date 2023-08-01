@@ -4,6 +4,7 @@ import CarForm from '../../components/CarForm/CarForm';
 import "./CarListPage.css"
 
 
+
 export default function CarListPage() {
 
   const [cars, setCars] = useState([]);
@@ -23,15 +24,4 @@ export default function CarListPage() {
 
 
   return (
-    <>
-        <CarForm onCarCreated={handleCarCreated} />
-        <ul className="car-grid" style={{listStyle:'none'}}>
-            {cars.map((car, idx) => (
-                <li key={idx}>
-                    <CarCard car={car} />
-                </li>
-            ))}
-        </ul>
-    </>
-  );
-}
+

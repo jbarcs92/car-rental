@@ -1,11 +1,9 @@
-import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom';
-import HomePage from '../HomePage/HomePage';
-import NavBar from '../../components/NavBar/NavBar';
-import CarListPage from '../CarListPage/CarListPage';
-import CarDetailPage from '../CarDetailPage/CarDetailPage';
-import './App.css';
+
 
 function App() {
+  const [user, setUser] = useState(null);
+
+
   return (
     <div className="App">
       <NavBar />
@@ -13,7 +11,9 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/cars" element={<CarListPage />} />
         <Route path="/:carId" element={<CarDetailPage />} />
+        <Route path="/cars/new" element={<CarForm />} />
       </Routes>
+      <Footer />
     </div>
   );
 }

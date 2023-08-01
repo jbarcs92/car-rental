@@ -5,12 +5,7 @@ import "./CarCard.css";
 const CarCard = ({ car }) => {
     return (
         <Link to={`/${car._id}`} className="car-card">
-            <div
-            className="car-card-poster"
-            style={{backgroundImage: `url(${car.image})`}}
-            ></div>
-            <h3 className="car-title">{car.description} {car.model}</h3>
-            <p className="car-rate">${car.rate}/day</p>
+
         </Link>
     );
 };

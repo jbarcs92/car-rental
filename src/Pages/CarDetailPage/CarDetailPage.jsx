@@ -1,16 +1,10 @@
-import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
-// import { ControlledCarousel } from "../../components/ControlledCarousel/ControlledCarousel";
-export default function CarDetailPage() {
-  const [car, setCar] = useState(null);
-  const {carId } = useParams();
+
 
   useEffect(() => {
     async function fetchCar() {
       try {
         const response = await fetch(`/api/cars/${carId}`);
-        if(!response.ok) {
-          throw new Error('Car not found');
+
         }
         // const carData = await response.json();
         const { carClass, description, model, year, rate, available, image } = await response.json();
@@ -24,8 +18,6 @@ export default function CarDetailPage() {
             image,
         });
       } catch (error) {
-        console.error('Error fetching car:', error);
-        setCar(null);
 
       }
     }
@@ -33,8 +25,7 @@ export default function CarDetailPage() {
   }, [carId]);
 
   if (!car) {
-    return <div>Loading...</div> //You can add a loading indicator here
-  }
+
 
   return (
     <div className="car-details">
@@ -50,4 +41,4 @@ export default function CarDetailPage() {
 
   );
 
-}
+

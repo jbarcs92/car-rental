@@ -1,14 +1,9 @@
-import { BrowserRouter as Router, Route,  Routes } from 'react-router-dom';
-import HomePage from '../HomePage/HomePage';
-import NavBar from '../../components/NavBar/NavBar';
-import CarListPage from '../CarListPage/CarListPage';
-import CarDetailPage from '../CarDetailPage/CarDetailPage';
-import Footer from '../../components/Footer/Footer';
-import './App.css';
-import CarForm from '../../components/CarForm/CarForm';
 
 
 function App() {
+  const [user, setUser] = useState(null);
+
+
   return (
     <div className="App">
       <NavBar />

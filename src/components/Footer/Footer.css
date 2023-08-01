@@ -1,0 +1,11 @@
+.page-footer {
+    position: fixed;
+    width: 100%;
+    background-color: black;
+    bottom: 0;
+}
+
+.right {
+    color: white;
+    text-align: right;
+}

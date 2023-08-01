@@ -3,7 +3,8 @@
 }
 
 .carouselimage {
-  height: 50vh;
+  height: 40vh;
+  margin-top: 7vmin;
 }
 
 .carousel-control-prev {

@@ -25,10 +25,7 @@
     list-style: none;
     background-color: #f9f8f8;
     padding: 20px;
-    
-
-
-}
+    }
 
 @media (max-width: 767px) {
     .car-grid {

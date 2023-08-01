@@ -9,7 +9,7 @@ const carSchema = new Schema({
     year: {type: Number, required: true},
     rate: {type: Number, required: true},
     available: {type: Boolean, default: false},
-    images: [{type: String}]
+    image: {type: String, required: true},
 }, {
     timestamps: true
 })

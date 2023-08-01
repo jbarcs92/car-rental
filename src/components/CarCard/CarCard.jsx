@@ -13,7 +13,7 @@ const CarCard = ({ car, onDeleteCar }) => {
             className="car-card-poster"
             style={{backgroundImage: `url(${car.image})`}}
             ></Link>
-            <h3 className="car-title">{car.description} {car.model}</h3>
+            <h3 className="car-title">{car.model}</h3>
             <p className="car-rate">${car.rate}/day</p>
             <div>
                 <button onClick={handleDelete}>Delete</button>

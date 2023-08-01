@@ -3,7 +3,10 @@ const Car = require('../../models/car');
 module.exports = {
     create,
     index,
-    details
+    details,
+    deleteCar
+
+
 }
 
 
@@ -49,3 +52,36 @@ async function details(req, res) {
         return res.status(500).json({message: 'Internal Server Error'});
     }
 }
+
+// Delete an item by ID
+async function deleteCar(req,res) {
+    try {
+      const deletedCar = await Car.findByIdAndDelete(req.params.id);
+      if (!deletedCar) {
+        return res.status(404).json({ error: 'Car not found' });
+      }
+      res.json({ message: 'Car deleted successfully' });
+    } catch (error) {
+      res.status(500).json({ error: 'Something went wrong' });
+    }
+  }
+
+
+
+
+  // Update an existing item by ID
+// const updateItem = async (req, res) => {
+//     try {
+//       const updatedItem = await Item.findByIdAndUpdate(req.params.id, req.body, {
+//         new: true,
+//       });
+//       if (!updatedItem) {
+//         return res.status(404).json({ error: 'Item not found' });
+//       }
+//       res.json(updatedItem);
+//     } catch (error) {
+//       res.status(500).json({ error: 'Something went wrong' });
+//     }
+//   };
+
+

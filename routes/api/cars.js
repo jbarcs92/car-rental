@@ -11,7 +11,7 @@ router.get('/', carsCtrl.index);
 router.get('/:carId', carsCtrl.details);
 
 //DELETE /api/cars/:id (delete a specific car)
-// router.delete('/:id', carsCtrl.delete);
+router.delete('/:id', carsCtrl.deleteCar);
 
 //PUT /api/cars/:id (update a specific car)
 // router.put('/:id', carsCtrl.update);

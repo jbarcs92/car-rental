@@ -1,9 +1,15 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
+import React from 'react';
+// import { base } from '../../../models/car';
+
+
 // import { ControlledCarousel } from "../../components/ControlledCarousel/ControlledCarousel";
 export default function CarDetailPage() {
   const [car, setCar] = useState(null);
   const {carId } = useParams();
+
+
 
   useEffect(() => {
     async function fetchCar() {
@@ -20,8 +26,10 @@ export default function CarDetailPage() {
 
       }
     }
+
     fetchCar();
   }, [carId]);
+
 
   if (!car) {
     return <div>Loading...</div> //You can add a loading indicator here
@@ -35,10 +43,24 @@ export default function CarDetailPage() {
         <p>Year: {car.year}</p>
         <p>Rate: ${car.rate}/day</p>
         <p>Available: {car.available ? 'Yes' : 'No'}</p>
+        
+      
         {/* <p>Category: {car.category.name}</p> */}
       </div>
     </div>
 
+
+
   );
 
+
+
 }
+
+
+
+// export default DeleteItem;
+
+
+
+

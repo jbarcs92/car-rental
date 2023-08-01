@@ -8,7 +8,7 @@ Inventory database for a car rental store. Employees are able to add new vehicle
 
 ## Wireframe and Planning Proccess
 
-![IMG_2006](https://github.com/jbarcs92/car-rental/assets/136091762/33889a73-fdf2-4068-8444-0e03129679a9)
+![IMG_2006](https://github.com/jbarcs92/car-rental/assets/136091762/33889a73-fdf2-4068-8444-0e03129679a9=250x250) 
 
 
 

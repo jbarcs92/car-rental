@@ -4,10 +4,12 @@ import NavBar from '../../components/NavBar/NavBar';
 import CarListPage from '../CarListPage/CarListPage';
 import CarDetailPage from '../CarDetailPage/CarDetailPage';
 import Footer from '../../components/Footer/Footer';
+import { useState } from 'react';
 import './App.css';
 
 
 function App() {
+  const [user, setUser] = useState(null);
   return (
     <div className="App">
       <NavBar />

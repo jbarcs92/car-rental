@@ -1,0 +1,37 @@
+.container {
+    background: linear-gradient(to right, #f1ededd1, #d3d1d1);
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 16px;
+}
+
+.car-grid h3 {
+    font-family: "Sen", sans-serif;
+    font-size: 20px;
+    margin: 0;
+    color: #555;
+    text-decoration: none;
+}
+
+.car-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 10px;
+    margin: 5px;
+    padding: 5px;
+}
+
+.car-grid li {
+    list-style: none;
+    background-color: #f9f8f8;
+    padding: 20px;
+    
+
+
+}
+
+@media (max-width: 767px) {
+    .car-grid {
+        grid-template-columns: 1fr;
+    }
+}

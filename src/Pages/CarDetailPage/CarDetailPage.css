@@ -1,6 +1,6 @@
 .car-info {
-    background-color: #f9f8f8;
-    padding: 20px;
+  background: linear-gradient(to right, #ffffffd1, #d3d1d1);
+  padding: 20px;
     border-radius: 5px;
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
   }

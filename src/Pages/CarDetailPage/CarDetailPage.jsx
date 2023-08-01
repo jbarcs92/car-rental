@@ -38,11 +38,12 @@ export default function CarDetailPage() {
         {car.class} {car.model} {car.year}
       </h2>
       <p className="car-description">{car.description}</p>
-      
+
       <div className="car-img">images{car.images}</div>
 
       <div className="car-rate">
         <p>Rate: ${car.rate}/day</p>
+        {/* avail on car card */}
         <p>Available: {car.available ? "Yes" : "No"}</p>
       </div>
     </div>

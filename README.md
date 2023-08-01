@@ -14,7 +14,7 @@ Inventory database for a car rental store. Employees are able to add new vehicle
 
 ## Technologies Used
 
-React.js, CSS, Bootstrap
+React.js, CSS, Bootstrap, Express.js, Node.js
 
 ## Project Link
 

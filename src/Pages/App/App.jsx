@@ -5,6 +5,7 @@ import CarListPage from '../CarListPage/CarListPage';
 import CarDetailPage from '../CarDetailPage/CarDetailPage';
 import Footer from '../../components/Footer/Footer';
 import './App.css';
+import CarForm from '../../components/CarForm/CarForm';
 
 
 function App() {
@@ -15,6 +16,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/cars" element={<CarListPage />} />
         <Route path="/:carId" element={<CarDetailPage />} />
+        <Route path="/cars/new" element={<CarForm />} />
       </Routes>
       <Footer />
     </div>

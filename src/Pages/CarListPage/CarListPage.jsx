@@ -3,6 +3,7 @@ import CarCard from '../../components/CarCard/CarCard';
 import CarForm from '../../components/CarForm/CarForm';
 
 
+
 export default function CarListPage() {
 
   const [cars, setCars] = useState([]);
@@ -22,24 +23,4 @@ export default function CarListPage() {
 
 
   return (
-    <>
-        <CarForm onCarCreated={handleCarCreated} />
-        <ul className="car-grid" style={{listStyle:'none'}}>
-            {cars.map((car, idx) => (
-                <li key={idx}>
-                    <CarCard car={car} />
-                </li>
-            ))}
-        </ul>
-    </>
-  );
-}
 
-//     async function fetchCars() {
-//       const filter = { category };
-//       const cars = await Car.find(filter);
-//       setCars(cars);
-//     }
-
-//     fetchCars();
-//   }, [category]);

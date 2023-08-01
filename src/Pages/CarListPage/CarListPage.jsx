@@ -21,6 +21,22 @@ export default function CarListPage() {
     setCars((prevCars) => [...prevCars, newCar]);
   };
 
+  const handleDeleteCar = async (carId) => {
+    try {
+      const response = await fetch(`/api/cars/${carId}`, { method: 'DELETE' });
+      const data = await response.json();
+  
+      if (response.ok) {
+        // remove deleted car from state
+        setCars((prevCars) => prevCars.filter((car) => car._id !== carId));
+      } else {
+        console.error('Error deleting car:', data.message);
+      }
+    } catch (error) {
+      console.error('Error deleting car:', error);
+    }
+  };
+
 
   return (
     <>
@@ -28,7 +44,7 @@ export default function CarListPage() {
         <ul className="car-grid" style={{listStyle:'none'}}>
             {cars.map((car, idx) => (
                 <li key={idx}>
-                    <CarCard car={car} />
+                    <CarCard car={car} onDeleteCar={handleDeleteCar} />
                 </li>
             ))}
         </ul>

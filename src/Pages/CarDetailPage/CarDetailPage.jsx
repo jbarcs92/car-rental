@@ -1,8 +1,10 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
-// import { ControlledCarousel } from "../../components/ControlledCarousel/ControlledCarousel";
+import CarUpdateForm from '../../components/CarUpdateForm/CarUpdateForm';
+
 export default function CarDetailPage() {
   const [car, setCar] = useState(null);
+  const [editMode, setEditMode] = useState(false);
   const {carId } = useParams();
 
   useEffect(() => {
@@ -12,9 +14,9 @@ export default function CarDetailPage() {
         if(!response.ok) {
           throw new Error('Car not found');
         }
-        // const carData = await response.json();
-        const { carClass, description, model, year, rate, available, image } = await response.json();
+        const { _id, carClass, description, model, year, rate, available, image } = await response.json();
         setCar({
+            _id,
             carClass,
             description,
             model,
@@ -26,28 +28,38 @@ export default function CarDetailPage() {
       } catch (error) {
         console.error('Error fetching car:', error);
         setCar(null);
-
       }
     }
     fetchCar();
   }, [carId]);
+
+  const handleCarUpdated = (updatedCar) => {
+    setCar(updatedCar);
+    setEditMode(false);
+  };
 
   if (!car) {
     return <div>Loading...</div> //You can add a loading indicator here
   }
 
   return (
-    <div className="car-details">
-      <h2>{car.description} {car.model}</h2>
-      {car.image && <img src={car.image} alt={`${car.description} ${car.model}`} />}
-        {/* images={car.images} */} 
-      <div className="info">
-        <p>Year: {car.year}</p>
-        <p>Rate: ${car.rate}/day</p>
-        <p>Available: {car.available ? 'Yes' : 'No'}</p>
-      </div>
-    </div>
-
+    <>
+      <button onClick={() => setEditMode(!editMode)}>
+        {editMode ? 'Cancel' : 'Edit Car'}
+      </button>
+      {editMode ? (
+        <CarUpdateForm carData={car} onCarUpdated={handleCarUpdated} />
+      ) : (
+        <div className="car-details">
+          <h2>{car.description} {car.model}</h2>
+          {car.image && <img src={car.image} alt={`${car.description} ${car.model}`} />}
+          <div className="info">
+            <p>Year: {car.year}</p>
+            <p>Rate: ${car.rate}/day</p>
+            <p>Available: {car.available ? 'Yes' : 'No'}</p>
+          </div>
+        </div>
+      )}
+    </>
   );
-
 }

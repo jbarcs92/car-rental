@@ -1,9 +1,6 @@
 import { useState, useEffect } from 'react';
 import CarCard from '../../components/CarCard/CarCard';
 import CarForm from '../../components/CarForm/CarForm';
-import { Navbar } from 'react-bootstrap';
-import { Row, Col, Container, Nav } from 'react-bootstrap';
-import './CarListPage.css';
 
 
 
@@ -26,30 +23,4 @@ export default function CarListPage() {
 
 
   return (
-    
-    <Container>
-    <Row>
-      <Col md={4}>
-        <CarForm onCarCreated={handleCarCreated} />
-        </Col>
-        <Col md={8}>
-          <Row>
-        <ul className="car-grid" style={{listStyle:'none'}}>
-            {cars.map((car, idx) => (
-              <Col md={6} key={car._id}>
-                 <li key={idx}>
-                    <CarCard car={car} />
-                </li>
-              </Col>
-            ))}
-        </ul>
-          </Row>
-        </Col>
-      </Row>  
-    </Container>
-    
-  );
-}
-
-
 

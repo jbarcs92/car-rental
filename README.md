@@ -18,7 +18,7 @@ React.js, CSS, Bootstrap, Express.js, Node.js
 
 ## Project Link
 
-
+TBD...
 
 ## Authors
 
@@ -33,3 +33,6 @@ JV
 Ability to sort vehicles by category, add service feature.
 
 ## Screenshots
+![Screenshot 2023-08-01 at 10 41 30 PM](https://github.com/jbarcs92/car-rental/assets/133605045/1944e45e-fa27-4984-9342-043c10828a53)
+![Screenshot 2023-08-01 at 10 41 42 PM](https://github.com/jbarcs92/car-rental/assets/133605045/f39dd903-fa20-43d2-9999-4bcd760e2086)
+

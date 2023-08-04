@@ -4,7 +4,14 @@ Car Rental
 
 ## Description
 
-Inventory database for a car rental store. Employees are able to add new vehicles, edit individual vehicles (e.g. mark if the vehicle is currently rented or not), and delete vehicles. The app also includes signup and login features.  
+MERN Stack inventory database for a car rental store. Employees are able to add new vehicles, edit individual vehicles (e.g. mark if the vehicle is currently rented or not), and delete vehicles. The app also includes signup and login features.
+
+## Technologies used:
+* MongoDB
+* Express.js
+* React
+* Node.js
+* Bootstrap
 
 ## Wireframe and Planning Proccess
 

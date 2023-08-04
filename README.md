@@ -12,6 +12,7 @@ MERN Stack inventory database for a car rental store. Employees are able to add 
 * React
 * Node.js
 * Bootstrap
+* CSS
 
 ## Wireframe and Planning Proccess
 
@@ -19,9 +20,6 @@ MERN Stack inventory database for a car rental store. Employees are able to add 
 
 
 
-## Technologies Used
-
-React.js, CSS, Bootstrap, Express.js, Node.js
 
 ## Project Link
 

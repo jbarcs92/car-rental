@@ -23,7 +23,7 @@ TBD...
 ## Authors
 
 
-Tobias Turrubiates <br>
+Teyo Turrubiates <br>
 Veronica Castro <br>
 Jarrod Barclay <br>
 JV
